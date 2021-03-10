@@ -2,7 +2,7 @@
  
 Name: cotila
 Version: 1.2.1
-Release: 1%{?dist}
+Release: 2%{?dist}
  
 License: ASL 2.0
 URL: https://github.com/calebzulawski/cotila
@@ -36,12 +36,18 @@ Summary: Development files for %{name}
 %install
 %cmake_install
 
+%check
+%ctest
+
 %files devel
-%doc README.md
-%license LICENSE AUTHORS
+%doc README.md AUTHORS
+%license LICENSE
 %{_datadir}/cmake/%{name}/
 %{_includedir}/%{name}/
  
 %changelog
+* Wed Mar 10 2021 Alexey Gorgurov <alexfails@fedoraproject.org> - 1.2.1-2
+- Handle package review feedback
+
 * Tue Mar 02 2021 Alexey Gorgurov <alexfails@fedoraproject.org> - 1.2.1-1
 - Initial SPEC release.
